@@ -39,7 +39,7 @@ export default function MonitorCard({ key, monitor, data }) {
             :
             (
               <span>
-                <div className="text-xl">{monitor.name}</div>
+                <div className="text-xl text-gray-500">{monitor.name}</div>
               </span>
             )
           }

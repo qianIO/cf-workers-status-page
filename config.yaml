@@ -1,6 +1,6 @@
 settings:
-  title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  title: 'status.qian.io'
+  url: 'https://status.qian.io' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
@@ -15,25 +15,44 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
+  - id: url-shortener
+    name: url-shortener
+    url: 'https://qian.to/rest/v3/'
+    expectStatus: 401
 
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
-    method: GET
+  - id: report
+    name: analytics
+    url: 'https://qian.report/'
     expectStatus: 200
-    linkable: true # allows the title to be a link, default=true
+    
+  - id: feedback
+    name: http-status
+    url: 'https://qian.stream/'
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
-    method: GET
-    expectStatus: 200
+  - id: netsage
+    name: netsage
+    url: 'https://netsage.qian.io/'
+    
+  - id: ludwig-lite
+    name: lite.ludwig
+    url: 'https://lite.ludwig.qian.io'
+    
+  - id: lift-aws-us-west-2
+    name: us-west-2.aws.lift
+    url: 'https://us-west-2.aws.lift.ludwig.qian.io'
+    linkable: false
+
+  - id: lift-aws-eu-central-1
+    name: eu-central-1.aws.lift
+    url: 'https://eu-central-1.aws.lift.ludwig.qian.io'
+    linkable: false
+  
+  - id: lift-alibaba-eu-west-1
+    name: eu-west-1.alibaba.lift
+    url: 'https://eu-west-1.lift.ludwig.qian.io'
+    linkable: false
+
+  - id: lift-alibaba-ap-east-1
+    name: ap-east-1.alibaba.lift
+    url: 'https://ap-east-1.alibaba.lift.ludwig.qian.io'
+    linkable: false

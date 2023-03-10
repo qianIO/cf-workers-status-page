@@ -70,8 +70,8 @@ export default function Index({ config, kvMonitors, kvMonitorsLastUpdate }) {
       <div className="container mx-auto px-4">
         <div className="flex flex-row justify-between items-center p-4">
           <div className="flex flex-row items-center">
-            <img className="h-8 w-auto" src={config.settings.logo} />
-            <h1 className="ml-4 text-3xl">{config.settings.title}</h1>
+            <img className="h-6 w-auto" src={config.settings.logo} />
+            <h1 className="ml-4 text-xl">{config.settings.title}</h1>
           </div>
           <div className="flex flex-row items-center">
             {typeof window !== 'undefined' && <ThemeSwitcher />}
@@ -90,21 +90,14 @@ export default function Index({ config, kvMonitors, kvMonitorsLastUpdate }) {
         })}
         <div className="flex flex-row justify-between mt-4 text-sm">
           <div>
-            Powered by{' '}
-            <a href="https://workers.cloudflare.com/" target="_blank">
-              Cloudflare Workers{' '}
-            </a>
-            &{' '}
-            <a href="https://flareact.com/" target="_blank">
-              Flareact{' '}
-            </a>
           </div>
           <div>
             <a
-              href="https://github.com/eidam/cf-workers-status-page"
+              href="https://qian.to/du7S"
               target="_blank"
+              style={{ color: "#000", textDecoration: 'underline' }}
             >
-              Get Your Status Page
+              github.com/eidam/cf-workers-status-page
             </a>
           </div>
         </div>
